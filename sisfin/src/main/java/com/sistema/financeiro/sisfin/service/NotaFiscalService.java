@@ -33,14 +33,29 @@ public class NotaFiscalService {
         return notaFiscalRepository.findById(id).get();
       }
 
-    //Retorna todas as receitas
-    public Double getReceitas(){
-        return notaFiscalRepository.getReceitas();
+    //Retorna a lista de receitas
+    public List<?> getListaReceitas(){
+        return notaFiscalRepository.getListaReceitas();
     }
 
-    //Retorna todas as despesas
-    public Double getDespesas(){
-        return notaFiscalRepository.getDespesas();
+    //Retorna a lista de despesas
+    public List<?> getListaDespesas(){
+        return notaFiscalRepository.getListaDespesas();
+    }
+
+    //Retorna a soma de todas as receitas
+    public Double getSomaReceitas(){
+        return notaFiscalRepository.getSomaReceitas();
+    }
+
+    //Retorna a soma de todas as despesas
+    public Double getSomaDespesas(){
+        return notaFiscalRepository.getSomaDespesas();
+    }
+
+    //Retorna o saldo atual (receitas - despesas)
+    public Double getSaldo(){
+        return (notaFiscalRepository.getSomaReceitas() - notaFiscalRepository.getSomaDespesas());
     }
 
     //Retorna despesas vencidas

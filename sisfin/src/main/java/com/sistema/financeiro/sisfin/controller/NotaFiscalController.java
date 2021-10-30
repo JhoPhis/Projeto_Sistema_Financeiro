@@ -59,14 +59,29 @@ public class NotaFiscalController {
 	    return new ResponseEntity<>(notaFiscalService.findById(id), HttpStatus.OK);
 	}
 
-    @GetMapping(path="/receitas")
-    public ResponseEntity<Double> getReceitas(){
-        return new ResponseEntity<>(notaFiscalService.getReceitas(), HttpStatus.OK);
+    @GetMapping(path = "/listareceitas")
+    public ResponseEntity<?> getListaReceitas(){
+        return new ResponseEntity<>(notaFiscalService.getListaReceitas(), HttpStatus.OK);
     }
 
-    @GetMapping(path="/despesas")
-    public ResponseEntity<Double> getDespesas(){
-        return new ResponseEntity<>(notaFiscalService.getDespesas(), HttpStatus.OK);
+    @GetMapping(path = "/listadespesas")
+    public ResponseEntity<?> getListaDespesas(){
+        return new ResponseEntity<>(notaFiscalService.getListaDespesas(), HttpStatus.OK);
+    }
+
+    @GetMapping(path="/somareceitas")
+    public ResponseEntity<Double> getSomaReceitas(){
+        return new ResponseEntity<>(notaFiscalService.getSomaReceitas(), HttpStatus.OK);
+    }
+
+    @GetMapping(path="/somadespesas")
+    public ResponseEntity<Double> getSomaDespesas(){
+        return new ResponseEntity<>(notaFiscalService.getSomaDespesas(), HttpStatus.OK);
+    }
+
+    @GetMapping(path="/saldo")
+    public ResponseEntity<Double> getSaldo(){
+        return new ResponseEntity<>(notaFiscalService.getSaldo(), HttpStatus.OK);
     }
     // ----------
     

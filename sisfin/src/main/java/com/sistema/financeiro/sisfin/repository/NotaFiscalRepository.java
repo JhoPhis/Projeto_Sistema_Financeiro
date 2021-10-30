@@ -15,10 +15,18 @@ public interface NotaFiscalRepository extends JpaRepository<NotaFiscal, Long> {
 
 	//Retorna a soma de todas as receitas
 	@Query(value = "SELECT SUM(nf.valor) FROM nota_fiscal nf WHERE eh_despesa = 0", nativeQuery = true)
-	public Double getReceitas();
+	public Double getSomaReceitas();
 
 	//Retorna a soma de todas as despesas
 	@Query(value = "SELECT SUM(nf.valor) FROM nota_fiscal nf WHERE eh_despesa = 1", nativeQuery = true)
-	public Double getDespesas();
+	public Double getSomaDespesas();
+
+	//Retorna lista de receitas
+	@Query(value = "SELECT nf.nome, nf.descricao, nf.data, nf.valor FROM nota_fiscal nf WHERE eh_despesa = 0", nativeQuery = true)
+	public List<?> getListaReceitas();
+	
+	//Retorna lista de receitas
+	@Query(value = "SELECT nf.nome, nf.descricao, nf.data, nf.valor, nf.vencimento FROM nota_fiscal nf WHERE eh_despesa = 1", nativeQuery = true)
+	public List<?> getListaDespesas();
 
 }
