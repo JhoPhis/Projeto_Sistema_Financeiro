@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- arquivo css bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- barra de navegação -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand"><b>SISTEMA FINANCEIRO</b></a>
+
+            <div class="dropdown">
+                <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton2"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    João Paulo da Silva
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-light" aria-labelledby="dropdownMenuButton2">
+                    <li><a class="dropdown-item disabled" href="#">Perfil</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="index.html">Sair</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu de opções -->
+    <div class="container pb-5">
+        <ul class="nav nav-tabs mt-4">
+            <li class="nav-item">
+                <a class="nav-link" href="receitas.html">RECEITAS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="despesas.html">DESPESAS</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link active" aria-current="page" href="fechamentos.html"><b>FECHAMENTOS
+                        MENSAIS</b></a>
+            </li>
+        </ul>
+
+        <!-- Conteudo -->
+        <div class="container border border-top-0 shadow">
+            <div class="p-3 d-md-flex justify-content-between">
+                <form class="row">
+                    <div class="col p-0">
+                        <input type="date" class="form-control" id="dataInicial" placeholder="First name" value="date"
+                            required>
+                        <small class="form-text text-muted">Data inicial</small>
+                    </div>
+                    <div class="col p-0">
+                        <input type="date" class="form-control" id="dataFinal" value="date" required>
+                        <small class="form-text text-muted">Data final</small>
+                    </div>
+                    <div class="col p-0">
+                        <button class="btn btn-secondary" type="submit">Buscar</button>
+                    </div>
+                </form>
+            </div>
+            <!-- Tabela -->
+            <div class="table-responsive text-center">
+                <table class="table table-bordered table-striped table-hover">
+                    <thead>
+                        <tr class="table-dark">
+                            <th scope="col">DESCRIÇÃO</th>
+                            <th scope="col">DATA INICIAL</th>
+                            <th scope="col">DATA FINAL</th>
+                            <th scope="col">RECEITAS</th>
+                            <th scope="col">DESPESAS</th>
+                            <th scope="col">LUCRO</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Fechamento Mensal - Agosto 2021</td>
+                            <td>01/08/2021</td>
+                            <td>31/08/2021</td>
+                            <td>R$1.792,00</td>
+                            <td>R$896,00</td>
+                            <td>R$896,00</td>
+                            <td>
+                                <button class="btn btn-outline-dark btn-sm">DETALHES</button>
+                            </td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+
+    <!-- Footer -->
+    <nav class="navbar navbar-dark bg-dark fixed-bottom">
+        <div class="container">
+            <div class="card">
+                <div class="card-body py-2 text-primary"><b>SALDO ATUAL: <span id='saldo'></span></b></div>
+            </div>
+            <span class="text-light">Última atualização: 26/10/2021 às 13:04</span>
+        </div>
+    </nav>
+
+    <!-- arquivo javascript -->
+    <script src="./saldoAtual.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
