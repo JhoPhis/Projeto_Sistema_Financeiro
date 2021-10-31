@@ -34,12 +34,12 @@ public class NotaFiscalService {
       }
 
     //Retorna a lista de receitas
-    public List<?> getListaReceitas(){
+    public List<String> getListaReceitas(){
         return notaFiscalRepository.getListaReceitas();
     }
 
     //Retorna a lista de despesas
-    public List<?> getListaDespesas(){
+    public List<Object> getListaDespesas(){
         return notaFiscalRepository.getListaDespesas();
     }
 

@@ -60,13 +60,27 @@ public class NotaFiscalController {
 	}
 
     @GetMapping(path = "/listareceitas")
-    public ResponseEntity<?> getListaReceitas(){
-        return new ResponseEntity<>(notaFiscalService.getListaReceitas(), HttpStatus.OK);
+    public String getListaReceitas(){
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
+        List<String> notaList = null;
+        @SuppressWarnings("unused")
+        String exception = null;
+        String arrayToJson = null;
+        try{
+            notaList = notaFiscalService.getListaReceitas();
+            arrayToJson = objectMapper.writeValueAsString(notaList);
+        } catch (Exception ex){
+            ex.printStackTrace();
+            exception = ex.getMessage();
+        }
+
+        return arrayToJson;
     }
 
     @GetMapping(path = "/listadespesas")
-    public ResponseEntity<?> getListaDespesas(){
-        return new ResponseEntity<>(notaFiscalService.getListaDespesas(), HttpStatus.OK);
+    public ResponseEntity<Object> getListaDespesas(){
+        return new ResponseEntity<Object>(notaFiscalService.getListaDespesas(), HttpStatus.OK);
     }
 
     @GetMapping(path="/somareceitas")

@@ -23,10 +23,10 @@ public interface NotaFiscalRepository extends JpaRepository<NotaFiscal, Long> {
 
 	//Retorna lista de receitas
 	@Query(value = "SELECT nf.nome, nf.descricao, nf.data, nf.valor FROM nota_fiscal nf WHERE eh_despesa = 0", nativeQuery = true)
-	public List<?> getListaReceitas();
+	public List<String> getListaReceitas();
 	
-	//Retorna lista de receitas
-	@Query(value = "SELECT nf.nome, nf.descricao, nf.data, nf.valor, nf.vencimento FROM nota_fiscal nf WHERE eh_despesa = 1", nativeQuery = true)
-	public List<?> getListaDespesas();
+	//Retorna lista de despesas
+	@Query(value = "SELECT nf.id as id, nf.nome as nome, nf.descricao as descricao, nf.data as data, nf.valor as valor, nf.vencimento as vencimento FROM nota_fiscal nf WHERE nf.eh_despesa = 1", nativeQuery = true)
+	public List<Object> getListaDespesas();
 
 }
