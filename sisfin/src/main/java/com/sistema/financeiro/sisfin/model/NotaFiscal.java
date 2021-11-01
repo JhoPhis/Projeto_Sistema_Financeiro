@@ -40,7 +40,7 @@ public class NotaFiscal {
 
     @Column(name="data", nullable = false)
     @JsonProperty(value="data")
-    @JsonFormat(pattern="yyyy/MM/dd")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd HH:mm")
     private Date Data;
 
     @Column(name="valor", nullable = false)
@@ -58,6 +58,6 @@ public class NotaFiscal {
 
     @Column(name="vencimento", nullable = true)
     @JsonProperty(value="vencimento")
-    @JsonFormat(pattern="yyyy/MM/dd")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd HH:mm")
     private Date Vencimento;
 }

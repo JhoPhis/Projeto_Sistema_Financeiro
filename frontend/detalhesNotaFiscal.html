@@ -40,40 +40,50 @@
         <!-- Conteudo -->
         <div class="container border shadow" style="width:800px">
             <div class="container text-center py-3">
-                <span class="fs-3">Inserir receita:</span>
+                <span class="fs-3">Receita:</span>
             </div>
-            <form class="was-validated">
+            <form>
                 <div class="container">
                     <div class="mb-3 mt-3">
                         <label for="descricao" class="form-label">Descrição:</label>
-                        <input type="text" class="form-control" placeholder="Descrição da receita" name="descricao"
-                            required>
+                        <div class="card">
+                            <div class="card-body py-1 "><b>Receita oriunda do projeto x feito para a empresa y</b>
+                            </div>
+                        </div>
                     </div>
                     <div class="mb-3 mt-3">
                         <label for="origem" class="form-label">Origem:</label>
-                        <input type="text" class="form-control" placeholder="Origem da receita" name="origem" required>
-                    </div>
-                    <div class="mb-3 mt-3 row">
-                        <div class="col">
-                            <label for="data" class="form-label">Data:</label>
-                            <input type="date" class="form-control" placeholder="Data da receita" name="data" required>
+                        <div class="card">
+                            <div class="card-body py-1 "><b>Projeto x</b>
+                            </div>
                         </div>
-                        <div class="col">
-                            <label for="valor" class="form-label">Valor:</label>
-                            <input type="text" class="form-control" placeholder="Valor da receita" name="valor"
-                                required>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="data" class="form-label">Data:</label>
+                        <div class="card">
+                            <div class="card-body py-1 "><b>01/06/2021</b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="valor" class="form-label">Valor:</label>
+                        <div class="card">
+                            <div class="card-body py-1 "><b>R$256,00</b>
+                            </div>
                         </div>
                     </div>
                     <div class="mb-3 mt-3">
                         <label for="imagem" class="form-label">Comprovante:</label>
-                        <input type="file" class="form-control" id="inputGroupFile02" required>
+                        <div class="card">
+                            <img src="exemplo.jpg" alt="exemplo" class="img-fluid">
+                        </div>
                     </div>
                 </div>
 
-                <div class="py-3 px-3 d-md-flex justify-content-md-end">
+                <div class=" py-3 px-3 d-md-flex justify-content-md-end">
                     <button type="button" class="btn btn-secondary mx-2"
-                        onclick="window.location.href='receitas.html'">CANCELAR</button>
-                    <button type="button" class="btn btn-primary">SALVAR</button>
+                        onclick="window.location.href='receitas.html'">VOLTAR</button>
+                    <button type="button" class="btn btn-warning">APAGAR</button>
                 </div>
             </form>
 
@@ -93,11 +103,12 @@
     </nav>
 
     <!-- arquivo javascript -->
-    <script src="./saldoAtual.js"></script>
+    <script src="./js/saldoAtual.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+    <script src="./js/request.js"></script>
 </body>
 
 </html>

@@ -43,9 +43,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="despesas.html">DESPESAS</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="fechamentos.html">FECHAMENTOS MENSAIS</a>
-            </li>
+
         </ul>
 
         <!-- Conteudo -->
@@ -66,7 +64,7 @@
                     </div>
                 </form>
                 <div>
-                    <button type="button" onclick="window.location.href='enviarReceita.html'"
+                    <button type="button" onclick="window.location.href='enviarNotaFiscal.html'"
                         class="btn btn-primary">INSERIR</button>
                 </div>
             </div>
@@ -76,8 +74,8 @@
                 <table class="table table-bordered table-striped table-hover">
                     <thead>
                         <tr class="table-dark">
-                            <th scope="col" id="nome">DESCRIÇÃO</th>
-                            <th scope="col" id="descricao">ORIGEM</th>
+                            <th scope="col" id="nome">Nome</th>
+                            <th scope="col" id="descricao">Descrição</th>
                             <th scope="col" id="data">DATA</th>
                             <th scope="col" id="valor">VALOR</th>
                             <th scope="col"></th>
@@ -107,25 +105,60 @@
                 </table>
             </div>
         </div>
-        <button class="btn btn-danger" onclick="getNotaFiscal()">TESTE </button>
 
-        <div id="container"></div>
     </div>
 
 
     <!-- Footer -->
     <nav class="navbar navbar-dark bg-dark fixed-bottom">
         <div class="container">
-            <div class="card">
-                <div class="card-body py-2 text-primary"><b>SALDO ATUAL: <span id='saldo'></span></b></div>
+          <div class="card">
+            <div class="card-body py-2 text-primary">
+              <b>SALDO ATUAL: <span id="saldo"></span></b>
             </div>
-            <span class="text-light">Última atualização: 26/10/2021 às 13:04</span>
+          </div>
+          <div class="card">
+            <div
+              style="
+                all: unset;
+                color: #3aac48;
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+                flex: 1 1 auto;
+                box-sizing: border-box;
+                padding-left: 16px;
+                padding-right: 16px;
+              "
+            >
+              <b>RECEITAS: <span id="receita"></span></b>
+            </div>
+          </div>
+          <div class="card">
+            <div
+              style="
+                all: unset;
+                color: #c20b0b;
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+                flex: 1 1 auto;
+                box-sizing: border-box;
+                padding-left: 16px;
+                padding-right: 16px;
+              "
+            >
+              <b>DESPESAS: <span id="despesa"></span></b>
+            </div>
+          </div>
+          <span id="digital-clock" style="color: white"></span>
         </div>
-    </nav>
+      </nav>
 
     <!-- arquivo javascript -->
-    <script src="./saldoAtual.js"></script>
-
+    <script src="./js/saldoAtual.js"></script>
+    <script src="./js/ultimaAtualizacao.js"></script>
+    <script src="./js/somaReceitas.js"></script>
+    <script src="./js/somaDespesas.js"></script>
+    <script src="./js/saldoAtual.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>

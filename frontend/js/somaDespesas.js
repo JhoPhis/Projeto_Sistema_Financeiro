@@ -5,16 +5,16 @@ function append(parent, el) {
   return parent.appendChild(el);
 }
 
-const ele = document.getElementById("saldo");
+const elementoDespesa = document.getElementById("despesa");
 
-const caminho = "http://localhost:8080/saldo";
+const caminhoDespesa = "http://localhost:8080/somadespesas";
 
-fetch(caminho)
+fetch(caminhoDespesa)
   .then((resp) => resp.json())
   .then(function (data) {
     console.log(data);
     let saldo = data;
-    ele.innerHTML  = saldo.toFixed(2);
+    elementoDespesa.innerHTML  = saldo.toFixed(2);
   })
   .catch(function (error) {
     console.log(error);
