@@ -22,8 +22,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class NotaFiscal {
-    
+public class Receita {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
@@ -47,17 +46,8 @@ public class NotaFiscal {
     @JsonProperty(value="valor")
     private Double Valor;
 
-    @Column(name="ehDespesa", nullable = false)
-    @JsonProperty(value="ehDespesa")
-    private boolean ehDespesa;
-
     @Column(name="criadoEm")
 	@JsonProperty(value = "criadoEm", access = JsonProperty.Access.READ_ONLY)
 	@CreationTimestamp
 	private Date CriadoEm;
-
-    @Column(name="vencimento", nullable = true)
-    @JsonProperty(value="vencimento")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd HH:mm")
-    private Date Vencimento;
 }

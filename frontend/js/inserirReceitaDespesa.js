@@ -24,39 +24,51 @@ async function post(obj) {
         descricao: mdescricao,
         data: mdata.replace("T", " "),
         valor: mvalor,
-        ehDespesa: true,
         vencimento: mvencimento.replace("T", " "),
       };
+      const req = await fetch("http://localhost:8080/despesa", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+
+        body: JSON.stringify({
+          nome: obj.nome,
+          descricao: obj.descricao,
+          data: obj.data,
+          valor: obj.valor,
+          vencimento: obj.vencimento,
+        }),
+      });
+
+      const res = await req.json();
+      alert("Inserido com sucesso!");
+      console.log(res);
+      window.location.href = "./despesas.html"
     } else {
       obj = {
         nome: mnome,
         descricao: mdescricao,
         data: mdata.replace("T", " "),
         valor: mvalor,
-        ehDespesa: false,
       };
+      const req = await fetch("http://localhost:8080/receita", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+
+        body: JSON.stringify({
+          nome: obj.nome,
+          descricao: obj.descricao,
+          data: obj.data,
+          valor: obj.valor,
+        }),
+      });
+
+      const res = await req.json();
+      alert("Inserido com sucesso!");
+      console.log(res);
+      window.location.href = "./receitas.html"
     }
     console.log(obj);
-    const req = await fetch("http://localhost:8080/notafiscal", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-
-      body: JSON.stringify({
-        nome: obj.nome,
-        descricao: obj.descricao,
-        data: obj.data,
-        valor: obj.valor,
-        ehDespesa: obj.ehDespesa,
-      }),
-    });
-
-    const res = await req.json();
-    alert("Inserido com sucesso!");
-    console.log(res);
-    window.location.reload();
   } catch (err) {
     console.error(`ERROR: ${err}`);
   }
-
-
 }

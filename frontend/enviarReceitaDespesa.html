@@ -50,7 +50,7 @@
       <!-- Conteudo -->
       <div class="container border shadow" style="width: 800px">
         <div class="container text-center py-3">
-          <span class="fs-3">Inserir Nota Fiscal:</span>
+          <span class="fs-3">Inserir Receita ou Despesa:</span>
         </div>
         <form class="was-validated">
           <div class="container">
@@ -60,7 +60,7 @@
                 id="nomeForm"
                 type="text"
                 class="form-control"
-                placeholder="Nome da receita"
+                placeholder="Nome do documento"
                 name="nome"
                 required
               />
@@ -71,7 +71,7 @@
                 id="descForm"
                 type="text"
                 class="form-control"
-                placeholder="Descrição da receita"
+                placeholder="Descrição sucinta"
                 name="descricao"
                 required
               />
@@ -94,7 +94,7 @@
                   id="valorForm"
                   type="number"
                   class="form-control"
-                  placeholder="Valor da receita"
+                  placeholder="Valor do documento"
                   step="0.01"
                   name="valor"
                   required
@@ -124,7 +124,7 @@
             <button
               type="button"
               class="btn btn-secondary mx-2"
-              onclick="window.location.href='receitas.html'"
+              onclick="window.history.back()"
             >
               CANCELAR
             </button>
@@ -152,7 +152,7 @@
 
     <!-- arquivo javascript -->
     <script src="./js/saldoAtual.js"></script>
-    <script src="./js/inserirReceita.js"></script>
+    <script src="./js/inserirReceitaDespesa.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

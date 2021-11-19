@@ -7,7 +7,7 @@ function append(parent, el) {
 
 const ul = document.getElementById("tabela");
 
-const url = "http://localhost:8080/despesa";
+const url = "http://localhost:8080/receita";
 
 let data = fetch(url)
   .then((resp) => resp.json())
@@ -26,13 +26,11 @@ $(document).ready(function () {
     var tr;
     for (var i = 0; i < json.length; i++) {
       var dateCreation = new Date(json[i].data).toLocaleString('pt-BR', {hour12: false});
-      var dateExpire = new Date(json[i].vencimento).toLocaleString('pt-BR', {hour12: false});
       tr = $("<tr/>");
       tr.append("<td>" + json[i].nome + "</td>");
       tr.append("<td>" + json[i].descricao + "</td>");
       tr.append("<td>" + dateCreation +  "</td>");
       tr.append("<td>" + 'R$ ' + json[i].valor + "</td>");
-      tr.append("<td>" + dateExpire + "</td>");
       tr.append(
         '<td> <button class="btn btn-outline-dark btn-sm">DETALHES</button> </td>'
       );

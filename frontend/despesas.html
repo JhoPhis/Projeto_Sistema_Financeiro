@@ -11,6 +11,7 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
     <link rel="stylesheet" href="./css/despesas.css" />
   </head>
@@ -91,7 +92,7 @@
           <div>
             <button
               type="button"
-              onclick="window.location.href='enviarNotaFiscal.html'"
+              onclick="window.location.href='enviarReceitaDespesa.html'"
               class="btn btn-primary"
             >
               INSERIR
@@ -105,7 +106,7 @@
             class="table table-bordered table-striped table-hover"
             id="tabela"
           >
-            <thead>
+            <thead id="table_head">
               <tr class="table-dark">
                 <th scope="col" id="nome">Nome</th>
                 <th scope="col" id="descricao">Descrição</th>
@@ -115,21 +116,13 @@
                 <th scope="col"></th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>Despesa oriunda do projeto x feito para a empresa y</td>
-                <td>Departamento z</td>
-                <td>08/12/2020</td>
-                <td>R$256,00</td>
-                <td>15/11/2021</td>
-                <td>
-                  <button class="btn btn-outline-dark btn-sm">DETALHES</button>
-                </td>
-              </tr>
+            <tbody id="table_body">
+
             </tbody>
           </table>
         </div>
       </div>
+      <div id="main"></div>
       <br />
       <br />
     </div>
